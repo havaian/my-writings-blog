@@ -36,8 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 // middleware
 app.use(morgan('dev'));
 
-
-
+// handling requests
 app.get('/', (req, res) => {
     Blog.find().sort({ date: -1 })
     .then(result => {
