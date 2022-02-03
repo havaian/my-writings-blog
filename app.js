@@ -5,7 +5,7 @@ const Blog = require('./models/blog');
 const { resolveSoa } = require("dns");
 const { result } = require("lodash");
 
-const dbURL = process.env.dbURL;
+const dbURL = 'mongodb+srv://just-an-admin:aOrqfuZc0K1IemSa@cluster0.zgrtw.mongodb.net/poetry-shack?retryWrites=true&w=majority';
 const port = 3030;
 
 // connect to mongoDB 
