@@ -4,13 +4,13 @@ const mongoose = require('mongoose');
 const Blog = require('./models/blog');
 const { resolveSoa } = require("dns");
 const { result } = require("lodash");
+require('dotenv').config();
 
-const dbURL = 'mongodb+srv://just-an-admin:aOrqfuZc0K1IemSa@cluster0.zgrtw.mongodb.net/poetry-shack?retryWrites=true&w=majority';
 const port = 3030;
 
 // connect to mongoDB 
 // listen for requests 
-mongoose.connect(dbURL, {
+mongoose.connect(process.env.dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
