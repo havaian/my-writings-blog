@@ -40,7 +40,7 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
     Blog.find().sort({ date: -1 })
     .then(result => {
-        res.render('pages/home', { blogs: result, title: 'All Blogs' });
+        res.render('index', { blogs: result, title: 'All Blogs' });
     })
     .catch(err => {
         console.log(err);
