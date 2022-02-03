@@ -1,0 +1,25 @@
+<div class="all-blogs">
+
+    <% for (let x = 0; x < blogs.length; x++) {%>
+
+        <li class="blog">
+            <a class="blog-link" href="/<%= blogs[x].slug %>/view">
+                <div class="blog-link-content-part">
+                    <h1><%= blogs[x].title %></h1>
+                    <p><% if (blogs[x].date === null) { %> 
+                        <%= blogs[x].createdAt.toLocaleDateString('ru-RU') %>
+                        <% } else { %> 
+                        <%= blogs[x].date.toLocaleDateString('ru-RU') %>
+                        <% } %> 
+                    </p>
+                </div>
+            </a>
+
+            <a class="right-arrow-link" href="/<%= blogs[x].slug %>/view">
+                <i class="fal fa-arrow-right"></i>
+            </a>
+        </li>
+
+    <% } %>   
+
+</div>

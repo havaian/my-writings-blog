@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: #fa7e31e1;
+    color: black;
+}
+
+body {
+    padding: 5%;
+    height: 100%;
+    width: 100%;
+    font-family: 'Noto Sans', serif;
+}
+
+section {
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(./pictures/blob-scene-haikei\ \(1\).svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.all-blogs {
+    padding: 50px 0;
+    position: relative;
+    display: grid;
+    width: 80%;
+    left: 10%;
+
+    background: transparent;;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.blog {
+    padding: 0 35%;
+    display: inline-flex;
+    width: 100%;
+    margin: 25px 0;
+    text-align: center;
+    justify-content: center;
+}
+
+.blog-link {
+    position: relative;
+    color: black;
+    display: inline-flex;
+    justify-self: center;
+}
+
+.right-arrow-link i {
+    position: absolute;
+    left: 75%;
+    font-size: 48px;
+    color: black;
+    transition: transform 0.1s ease;
+}
+
+.blog-link:hover + .right-arrow-link > i,
+.right-arrow-link:hover i {
+    transform: translateX(30%);
+    transition: transform 0.1s ease;
+}
+
+/* .blog a:after {
+    opacity: 0;
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.2s ease;
+    border: 1px solid #f97623;
+}
+
+.blog a:hover {
+    transform: scale(103%);
+    transition: all 0.2s linear;
+}
+
+.blog a:hover::after {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+} */
+
+.blog h1 {
+    font-weight: normal;
+}
+
+nav {
+    top: 11.5%;
+    left: 5%;
+    display: grid;
+    position: fixed;
+}
+
+nav i {
+    margin: 25px 0;
+    font-size: 48px;
+    color: black;
+    transition: color 0.1s linear;
+}
+
+nav i:hover {
+    color: #f97623;
+    transition: color 0.1s linear;
+}
+
+.create-blog {
+    padding: 5%;
+    left: 10%;
+    width: 80%;
+    min-height: 600px;
+    position: relative;
+    display: grid;
+
+    background: transparent;;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    position: relative; 
+}
+
+.create-blog div {
+    position: relative;
+    overflow: hidden;
+}
+
+.create-blog input, .create-blog textarea {
+    background: none;
+    border: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.create-blog #date-input {
+    color: transparent;
+    transition: all 0.2s ease;
+}
+
+.create-blog button {
+    margin-top: 25px;
+}
+
+.create-blog label {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+#title-input-container input, #date-input-container input {
+    height: 50px;
+}
+
+#title-label {
+    transform: translateY(30px);
+}
+
+#date-label {
+    transform: translateY(30px);
+}
+
+#body-label {
+    transform: translateY(212px);
+}
+
+.create-blog label::after {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #f97623;
+    transform: translateX(-101%);
+    transition: transform 0.25s ease;
+}
+
+.create-blog label::before {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease;
+    transform: translateX(0%);
+}
+
+.create-blog input:focus + label span,
+.create-blog textarea:focus + label span,
+.create-blog input:valid + label span,
+.create-blog textarea:valid + label span {
+    transform: translateY(0px);
+    opacity: 0;
+    transition: all 0.25s ease;
+}
+
+.create-blog input:focus + label::after,
+.create-blog textarea:focus + label::after,
+.create-blog input:valid + label::after,
+.create-blog textarea:valid + label::after {
+    transform: translateX(0%);
+    transition: transform 0.25s ease;
+}
+
+.create-blog input:focus + label::before,
+.create-blog textarea:focus + label::before,
+.create-blog input:valid + label::before,
+.create-blog textarea:valid + label::before {
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+}
+
+.create-blog div textarea:focus {
+    resize: none;
+}
+
+.create-blog textarea,
+.create-blog input {
+    outline: none;
+    resize: none;
+}
+
+.create-blog #date-input:focus,
+.create-blog #date-input:valid {
+    color: black;
+    transition: all 0.2s ease;
+}
+
+.create-blog button {
+    outline: none;
+    border: 3px solid rgba(0, 0, 0, 0.18);
+    background: transparent;
+    font-size: 20px;
+    font-weight: normal;
+    transition: border 0.3s ease;
+    cursor: pointer;
+}
+
+.create-blog button:hover,
+.create-blog button:focus,
+.create-blog button:focus-within {
+    border: 3px solid #f97623;
+    transition: border 0.3s ease;
+}
+
+.main-content {
+    padding: 50px 150px;
+    position: relative;
+    width: 80%;
+    left: 10%;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-rows: repeat(1fr, 3);
+    
+    background: transparent;;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.main-content-title {
+    position: relative;
+}
+
+.main-content-body {
+    max-width: 100%;
+    margin-top: 15%;
+    position: relative;
+}
+
+.main-content-date {
+    margin-top: 15%;
+    position: relative;
+}
+
+.edit-btn {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+}
+
+.edit-btn i {
+    color: black;
+    font-size: 48px;
+    transition: color 0.1s ease;
+}
+
+.edit-btn:hover i {
+    color: #f97623;
+    transition: color 0.1s ease;
+}
+
+.delete-btn {
+    bottom: 10%;
+    right: 5%;
+    cursor: pointer;
+    position: fixed;
+}
+
+.back-btn {
+    top: 15%;
+    left: 5%;
+    cursor: pointer;
+    position: fixed;
+}
+
+.delete-btn i,
+.back-btn i {
+    font-size: 48px;
+    color: black;
+    transition: color 0.1s linear;
+}
+
+.delete-btn i:hover{
+    color: red;
+    transition: color 0.1s linear;
+}
+
+.back-btn i:hover {
+    color: #f97623;
+    transition: color 0.1s linear;
+}
+
+@media screen and (max-width: 800px) {
+    .blog {
+        padding: 0 20%;
+    }
+
+    .blog-link h1 {
+        font-size: 28px;
+    }
+    
+    .right-arrow-link i {
+        left: 85%;
+        font-size: 36px;
+    }
+
+    nav {
+        top: 10%;
+    }
+
+    nav i {
+        font-size: 36px;
+    }
+
+    .back-btn {
+        top: 10%;
+    }
+
+    .back-btn i {
+        font-size: 36px;
+    }
+
+    .main-content {
+        padding: 10% 5%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .blog {
+        padding: 0 10%;
+    }
+
+    .blog-link h1 {
+        font-size: 24px;
+    }
+    
+    .right-arrow-link i {
+        left: 85%;
+        font-size: 32px;
+    }
+
+    nav {
+        left: 4%;
+        top: 10%;
+    }
+
+    nav i {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .blog {
+        padding: 0 10%;
+    }
+
+    .blog-link h1 {
+        font-size: 20px;
+    }
+    
+    .right-arrow-link i {
+        left: 85%;
+        font-size: 28px;
+    }
+
+    nav {
+        left: 10%;
+        top: 11.5%;
+    }
+
+    nav i {
+        font-size: 36px;
+    }
+
+    .back-btn {
+        left: 10%;
+        top: 15%;
+    }
+
+    .back-btn i {
+        font-size: 36px;
+    }
+
+    .main-content {
+        padding: 10% 5%;
+    }
+
+    .main-content-title {
+        font-size: 26px;
+    }
+
+    .main-content-body {
+        font-size: 16px;
+    }
+
+    .all-blogs {
+        background: transparent;;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: none;
+        border: none;
+    }
+
+    .main-content {
+        background: transparent;;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border-radius: none;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+}
+
+@media screen and (max-width: 400px) {
+
+}

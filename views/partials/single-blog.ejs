@@ -1,0 +1,14 @@
+<div class="main-content">
+
+    <h1 class="main-content-title"><%= blogs.title %></h1>
+    <div class="main-content-body">
+        <%- blogs.sanitizedHtml %>
+    </div>
+    <p class="main-content-date"><% if (blogs.date === null) { %> 
+        <%= blogs.createdAt.toLocaleDateString('ru-RU') %>
+        <% } else { %> 
+        <%= blogs.date.toLocaleDateString('ru-RU') %>
+        <% } %> 
+    </p>
+    
+</div>

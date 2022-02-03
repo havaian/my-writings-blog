@@ -1,0 +1,40 @@
+<form class="create-blog" action="/edit-blog" method="post">
+
+    <input type="hidden" name="_method" value="put"/>
+
+    <div id="title-input-container">
+        
+        <input type="text" name="title" id="title-input" required value="<%= blogs.title %>">
+        <label id="title-label" for="title">
+            <span>
+                Title
+            </span>
+        </label>
+
+    </div>
+
+    <div id="body-input-container">
+        
+        <textarea name="body" id="body-input" cols="30" rows="10" required><%= blogs.body %></textarea>
+        <label id="body-label" for="body">
+            <span>
+                Body
+            </span>
+        </label>
+
+    </div>
+
+    <div id="date-input-container">
+        
+        <input type="date" name="date" id="date-input">
+        <label id="date-label" for="date">
+            <span>
+                Date
+            </span>
+        </label>
+
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>

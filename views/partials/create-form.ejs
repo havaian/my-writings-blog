@@ -1,0 +1,38 @@
+<form class="create-blog" action="/create-blog" method="post">
+
+    <div id="title-input-container">
+        
+        <input type="text" name="title" id="title-input" required>
+        <label id="title-label" for="title">
+            <span>
+                Title
+            </span>
+        </label>
+
+    </div>
+
+    <div id="body-input-container">
+        
+        <textarea name="body" id="body-input" cols="30" rows="10" required></textarea>
+        <label id="body-label" for="body">
+            <span>
+                Body
+            </span>
+        </label>
+
+    </div>
+
+    <div id="date-input-container">
+        
+        <input type="date" name="date" id="date-input">
+        <label id="date-label" for="date">
+            <span>
+                Date
+            </span>
+        </label>
+
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
