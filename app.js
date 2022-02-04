@@ -40,7 +40,7 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
     Blog.find().sort({ date: -1 })
     .then(result => {
-        res.render('index', { blogs: result, title: 'All Blogs' });
+        res.render('views/index', { blogs: result, title: 'All Blogs' });
     })
     .catch(err => {
         console.log(err);
@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
 
 app.get('/create-blog', (req, res) => {
 
-    res.render('pages/create', { title: 'Create Blog' });
+    res.render('views/pages/create', { title: 'Create Blog' });
 
 });
 
@@ -75,10 +75,10 @@ app.get('/:slug/view', (req, res) => {
             res.redirect('/');
         } else {
             if (result.date === null) {
-                res.render('pages/blog', { blogs: result, title: `Blog | ${result.createdAt.toLocaleDateString('ru-RU')}` });
+                res.render('views/pages/blog', { blogs: result, title: `Blog | ${result.createdAt.toLocaleDateString('ru-RU')}` });
             }
             else {
-                res.render('pages/blog', { blogs: result, title: `Blog | ${result.date.toLocaleDateString('ru-RU')}` });
+                res.render('views/pages/blog', { blogs: result, title: `Blog | ${result.date.toLocaleDateString('ru-RU')}` });
             }
         }
     })
@@ -120,5 +120,5 @@ app.get('/:slug/view', (req, res) => {
 // });
 
 app.use((req, res) => {
-    res.status(404).render('pages/404', { title: 'Page Not Found' });
+    res.status(404).render('views/pages/404', { title: 'Page Not Found' });
 });
