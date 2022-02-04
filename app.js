@@ -47,16 +47,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/all-blogs', (req, res) => {
-    Blog.find().sort({ date: -1 })
-    .then(result => {
-        res.render('index', { blogs: result, title: 'All Blogs' });
-    })
-    .catch(err => {
-        console.log(err);
-    });
-});
-
 app.get('/create-blog', (req, res) => {
 
     res.render('pages/create', { title: 'Create Blog' });
