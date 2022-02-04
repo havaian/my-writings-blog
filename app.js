@@ -27,7 +27,7 @@ mongoose.connect(process.env.dbURL, {
 const app = express();
 
 // view engine 
-app.set('view engine', 'html');
+app.set('view engine', 'ejs');
 
 // statis files
 app.use(express.static('public'));
@@ -40,7 +40,17 @@ app.use(morgan('dev'));
 app.get('/', (req, res) => {
     Blog.find().sort({ date: -1 })
     .then(result => {
-        res.render('../index', { blogs: result, title: 'All Blogs' });
+        res.render('index', { blogs: result, title: 'All Blogs' });
+    })
+    .catch(err => {
+        console.log(err);
+    });
+});
+
+app.get('/all-blogs', (req, res) => {
+    Blog.find().sort({ date: -1 })
+    .then(result => {
+        res.render('index', { blogs: result, title: 'All Blogs' });
     })
     .catch(err => {
         console.log(err);
